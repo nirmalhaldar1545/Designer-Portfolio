@@ -77,3 +77,57 @@
 .animate-grid-move {
   animation: grid-move-up 4s linear infinite;
 }
+
+/* Color motion flow animations */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+    filter: hue-rotate(0deg);
+  }
+  25% {
+    background-position: 100% 50%;
+    filter: hue-rotate(90deg);
+  }
+  50% {
+    background-position: 0% 50%;
+    filter: hue-rotate(180deg);
+  }
+  75% {
+    background-position: 100% 50%;
+    filter: hue-rotate(270deg);
+  }
+  100% {
+    background-position: 0% 50%;
+    filter: hue-rotate(360deg);
+  }
+}
+
+@keyframes gradient-x {
+  0%, 100% {
+    background-size: 200% 200%;
+    background-position: left center;
+  }
+  50% {
+    background-size: 200% 200%;
+    background-position: right center;
+  }
+}
+
+@keyframes colorPulse {
+  0%, 100% {
+    opacity: 0.8;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.02);
+  }
+}
+
+.animate-gradient-x {
+  animation: gradient-x 6s ease-in-out infinite;
+}
+
+.animate-color-pulse {
+  animation: colorPulse 4s ease-in-out infinite;
+}

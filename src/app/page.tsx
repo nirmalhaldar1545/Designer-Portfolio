@@ -1,9 +1,15 @@
-import HeroSection from "~/app/_components/HeroSection";
+import { HeroGeometric } from "@/components/ui/shape-landing-hero";
 
 export default function Home() {
   return (
-    <main className="flex min-h-screen flex-col">
-      <HeroSection />
+    <main className="min-h-screen w-full">
+      {/* Hero Section with geometric shapes and animations */}
+      <HeroGeometric
+        title1 = "Crafting Exceptional"
+        title2 = "Digital Experiences"
+      />
+
+      {/* Content sections removed */}
     </main>
   );
 }

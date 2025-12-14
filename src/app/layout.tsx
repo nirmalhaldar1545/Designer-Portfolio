@@ -5,6 +5,7 @@ import { Geist } from "next/font/google";
 import { Caveat, Playfair_Display } from "next/font/google";
 
 import { TRPCReactProvider } from "~/trpc/react";
+import { Navbar } from "@/components/ui/navbar";
 
 export const metadata: Metadata = {
   title: "Taposi's Design Portfolio",
@@ -39,6 +40,7 @@ export default function RootLayout({
       className={`${geist.variable} ${caveat.variable} ${playfairDisplay.variable}`}
     >
       <body>
+        <Navbar />
         <TRPCReactProvider>{children}</TRPCReactProvider>
       </body>
     </html>
