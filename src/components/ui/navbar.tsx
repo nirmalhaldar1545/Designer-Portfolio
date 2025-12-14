@@ -21,7 +21,7 @@ export function Navbar() {
                         transition={{ duration: 0.6, delay: 0.2 }}
                         className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-white/[0.03] border border-white/[0.08] ml-4 sm:ml-6 lg:ml-8 touch-target"
                     >
-                        <Circle className="h-1.5 w-1.5 sm:h-2 sm:w-2 fill-rose-500/80" />
+                        <Circle className="h-1.5 w-1.5 sm:h-2 sm:w-2 blink-dot" />
                         <span className="text-xs sm:text-sm text-white/60 tracking-wide">
                             Designer Portfolio
                         </span>

@@ -105,8 +105,13 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative w-full overflow-hidden bg-[#030303] pt-14 sm:pt-16 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
-            <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
+        <div className="relative w-full overflow-hidden bg-[#000814] pt-14 sm:pt-16 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/[0.06] via-transparent to-cyan-400/[0.06] blur-3xl" />
+            
+            {/* Vignette Effect */}
+            <div className="absolute inset-0 pointer-events-none" style={{
+                background: 'radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.3) 100%)'
+            }} />
 
             <div className="absolute inset-0 overflow-hidden">
                 <ElegantShape
@@ -220,7 +225,7 @@ function HeroGeometric({
                 </div>
             </div>
 
-            <div className="absolute inset-0 bg-gradient-to-t from-[#030303] via-transparent to-[#030303]/80 pointer-events-none" />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#000814] via-transparent to-[#000814]/80 pointer-events-none" />
         </div>
     );
 }
