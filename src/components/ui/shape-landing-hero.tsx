@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
+import Image from "next/image";
 function ElegantShape({
     className,
     delay = 0,
@@ -104,67 +105,89 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative w-full overflow-hidden bg-[#030303] pt-16 md:pt-20 min-h-[calc(100vh-4rem)] md:min-h-[calc(100vh-5rem)]">
+        <div className="relative w-full overflow-hidden bg-[#030303] pt-14 sm:pt-16 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
             <div className="absolute inset-0 bg-gradient-to-br from-indigo-500/[0.05] via-transparent to-rose-500/[0.05] blur-3xl" />
 
             <div className="absolute inset-0 overflow-hidden">
                 <ElegantShape
                     delay={0.3}
-                    width={600}
-                    height={140}
+                    width={300}
+                    height={70}
                     rotate={12}
                     gradient="from-indigo-500/[0.15]"
                     colorFlow={true}
-                    className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+                    className="left-[-15%] sm:left-[-10%] lg:left-[-5%] top-[10%] sm:top-[15%] lg:top-[20%]"
                 />
 
                 <ElegantShape
                     delay={0.5}
-                    width={500}
-                    height={120}
+                    width={250}
+                    height={60}
                     rotate={-15}
                     gradient="from-rose-500/[0.15]"
                     colorFlow={true}
-                    className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+                    className="right-[-10%] sm:right-[-5%] lg:right-[0%] top-[65%] sm:top-[70%] lg:top-[75%]"
                 />
 
                 <ElegantShape
                     delay={0.4}
-                    width={300}
-                    height={80}
+                    width={150}
+                    height={40}
                     rotate={-8}
                     gradient="from-violet-500/[0.15]"
                     colorFlow={true}
-                    className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+                    className="left-[0%] sm:left-[5%] lg:left-[10%] bottom-[0%] sm:bottom-[5%] lg:bottom-[10%]"
                 />
 
                 <ElegantShape
                     delay={0.6}
-                    width={200}
-                    height={60}
+                    width={100}
+                    height={30}
                     rotate={20}
                     gradient="from-amber-500/[0.15]"
                     colorFlow={true}
-                    className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
+                    className="right-[10%] sm:right-[15%] lg:right-[20%] top-[5%] sm:top-[10%] lg:top-[15%]"
                 />
 
                 <ElegantShape
                     delay={0.7}
-                    width={150}
-                    height={40}
+                    width={75}
+                    height={20}
                     rotate={-25}
                     gradient="from-cyan-500/[0.15]"
                     colorFlow={true}
-                    className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
+                    className="left-[15%] sm:left-[20%] lg:left-[25%] top-[0%] sm:top-[5%] lg:top-[10%]"
                 />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 md:px-6 py-8 md:py-12">
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+                {/* Image positioned at container level (same as navbar) */}
+                <div className="absolute left-4 sm:left-6 lg:left-8 top-0 sm:top-4 lg:top-8">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9, x: -20 }}
+                        animate={{ opacity: 1, scale: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 0.9 }}
+                        className="relative z-10 w-full"
+                    >
+                        <Image
+                            src="/Assets/Images/figure.png"
+                            alt="Designer figure"
+                            width={100}
+                            height={133}
+                            className="w-[64px] h-auto sm:w-[96px] md:w-[128px] lg:w-[160px] xl:w-[200px] object-contain image-responsive"
+                            priority={false}
+                            sizes="(max-width: 640px) 64px, (max-width: 768px) 96px, (max-width: 1024px) 128px, (max-width: 1280px) 160px, 200px"
+                            loading="lazy"
+                            decoding="async"
+                        />
+                    </motion.div>
+                </div>
+
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-start">
-                        {/* Left Section - Text Content */}
-                        <div className="lg:col-span-7 xl:col-span-6">
-                            <div className="lg:pr-8 xl:pr-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-6 items-start">
+                        {/* Right Section - Text Content */}
+                        <div className="lg:col-span-6 xl:col-span-7 order-2 lg:order-2 lg:col-start-7">
+                            <div className="pl-20 sm:pl-24 md:pl-28 lg:pl-32 xl:pl-36 2xl:pl-40 lg:pr-6 ml-0 sm:ml-2 lg:ml-3 xl:ml-4 pt-4 sm:pt-8 lg:pt-12">
                                 {/* Badge moved to navbar */}
 
                                 <motion.div
@@ -174,7 +197,7 @@ function HeroGeometric({
                                     transition={{ duration: 1, delay: 0.7 }}
                                     className="text-left"
                                 >
-                                    <h1 className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl font-bold mb-6 md:mb-8 tracking-tight">
+                                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 tracking-tight leading-tight">
                                         <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                             {title1}
                                         </span>
@@ -189,22 +212,9 @@ function HeroGeometric({
                                         </h1>
                                 </motion.div>
 
-                                <motion.div
-                                    variants={fadeUpVariants}
-                                    initial="hidden"
-                                    animate="visible"
-                                    transition={{ duration: 1, delay: 0.9 }}
-                                    className="text-left"
-                                >
-                                    <p className="text-base sm:text-lg md:text-xl text-white/40 mb-8 leading-relaxed font-light tracking-wide max-w-lg">
-                                        Crafting exceptional digital experiences through
-                                        innovative design and cutting-edge technology.
-                                    </p>
-                                </motion.div>
+                                {/* Description text removed */}
                             </div>
                         </div>
-
-                        {/* SVG section removed */}
 
                     </div>
                 </div>

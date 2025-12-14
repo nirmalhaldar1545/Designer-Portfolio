@@ -7,6 +7,101 @@
   --font-handwritten: "Caveat", "Comic Sans MS", cursive, sans-serif;
 }
 
+/* Mobile-first responsive design improvements */
+@layer utilities {
+  /* Better touch targets on mobile */
+  .touch-target {
+    min-height: 44px;
+    min-width: 44px;
+  }
+
+  /* Improved text rendering on mobile */
+  .mobile-text-optimized {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Better scroll behavior */
+  .smooth-scroll {
+    scroll-behavior: smooth;
+  }
+
+  /* Prevent zoom on input focus (iOS) */
+  .prevent-zoom {
+    font-size: 16px;
+  }
+
+  /* Better performance for animations on mobile */
+  .gpu-accelerated {
+    transform: translateZ(0);
+    will-change: transform;
+  }
+
+  /* Optimized image rendering */
+  .image-responsive {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+  }
+
+  /* Better image loading and performance */
+  .image-optimized {
+    loading: lazy;
+    decoding: async;
+  }
+}
+
+/* Media queries for enhanced mobile experience */
+@media (max-width: 640px) {
+  /* Reduce motion for users who prefer it */
+  @media (prefers-reduced-motion: reduce) {
+    * {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  /* Optimize text size for mobile readability */
+  body {
+    font-size: 16px;
+    line-height: 1.6;
+  }
+
+  /* Better focus indicators for accessibility */
+  button:focus-visible,
+  a:focus-visible {
+    outline: 2px solid #3b82f6;
+    outline-offset: 2px;
+  }
+}
+
+/* Landscape phone optimizations */
+@media (max-width: 640px) and (orientation: landscape) {
+  .landscape-optimized {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}
+
+/* Tablet optimizations */
+@media (min-width: 641px) and (max-width: 1024px) {
+  .tablet-optimized {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+/* High-DPI display optimizations */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+  .image-responsive {
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+  }
+}
+
 /* Custom animations for enhanced visual appeal */
 @keyframes float {
   0%, 100% {
