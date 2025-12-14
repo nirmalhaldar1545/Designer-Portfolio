@@ -4,6 +4,7 @@ import { motion } from "framer-motion";
 import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
+import { EtherealShadow } from "@/components/ui/etheral-shadow";
 function ElegantShape({
     className,
     delay = 0,
@@ -105,11 +106,22 @@ function HeroGeometric({
     };
 
     return (
-        <div className="relative w-full overflow-hidden bg-[#000814] pt-14 sm:pt-16 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
-            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/[0.06] via-transparent to-cyan-400/[0.06] blur-3xl" />
+        <div className="relative w-full overflow-hidden bg-[#000814] pt-2 sm:pt-4 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
+            {/* Ethereal Shadow Background Layer */}
+            <div className="absolute inset-0 z-0">
+                <EtherealShadow
+                    color="rgba(128, 128, 128, 1)"
+                    animation={{ scale: 100, speed: 90 }}
+                    noise={{ opacity: 1, scale: 1.2 }}
+                    sizing="fill"
+                    intensity={0.3}
+                />
+            </div>
+
+            <div className="absolute inset-0 bg-gradient-to-br from-blue-400/[0.06] via-transparent to-cyan-400/[0.06] blur-3xl z-[1]" />
             
             {/* Vignette Effect */}
-            <div className="absolute inset-0 pointer-events-none" style={{
+            <div className="absolute inset-0 pointer-events-none z-[2]" style={{
                 background: 'radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.3) 100%)'
             }} />
 
@@ -165,7 +177,87 @@ function HeroGeometric({
                 />
             </div>
 
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12">
+            {/* Mobile Layout: Locked 50% split with 35% photo and 65% text side by side */}
+            <div className="relative z-10 h-screen flex flex-col lg:hidden">
+                {/* First 50% - Split into 35% photo and 65% text side by side */}
+                <div className="h-[50vh] flex">
+                    {/* Photo Section - 35% width */}
+                    <div className="w-[35%] h-full flex items-center justify-center px-2">
+                        <motion.div
+                            initial={{ opacity: 0, scale: 0.9, x: -20 }}
+                            animate={{ opacity: 1, scale: 1, x: 0 }}
+                            transition={{ duration: 1, delay: 0.9 }}
+                            className="relative z-10 w-full flex justify-center"
+                        >
+                            <Image
+                                src="/Assets/Images/figure.png"
+                                alt="Designer figure"
+                                width={100}
+                                height={133}
+                                className="w-[80px] h-auto object-contain image-responsive"
+                                priority={false}
+                                loading="lazy"
+                                decoding="async"
+                            />
+                        </motion.div>
+                    </div>
+                    
+                    {/* Text Section - 65% width */}
+                    <div className="w-[65%] h-full flex items-center justify-center px-3">
+                        <motion.div
+                            variants={fadeUpVariants}
+                            initial="hidden"
+                            animate="visible"
+                            transition={{ duration: 1, delay: 0.7 }}
+                            className="text-left w-full"
+                        >
+                            <h1 className="text-4xl font-bold tracking-tight leading-tight">
+                                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                                    Elevate
+                                </span>
+                                <br />
+                                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                                    Your
+                                </span>
+                                <br />
+                                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
+                                    Digital
+                                </span>
+                                <br />
+                                <span
+                                    className={cn(
+                                        "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                                    )}
+                                >
+                                    Crafting
+                                </span>
+                                <br />
+                                <span
+                                    className={cn(
+                                        "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                                    )}
+                                >
+                                    Exceptional
+                                </span>
+                                <br />
+                                <span
+                                    className={cn(
+                                        "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
+                                    )}
+                                >
+                                    Websites
+                                </span>
+                            </h1>
+                        </motion.div>
+                    </div>
+                </div>
+
+                {/* Remaining space for other content - no separation */}
+                <div className="flex-1"></div>
+            </div>
+
+            {/* Desktop Layout - Original layout for larger screens */}
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 hidden lg:block">
                 {/* Image positioned at container level (same as navbar) */}
                 <div className="absolute left-4 sm:left-6 lg:left-8 top-0 sm:top-4 lg:top-8">
                     <motion.div
@@ -179,9 +271,9 @@ function HeroGeometric({
                             alt="Designer figure"
                             width={100}
                             height={133}
-                            className="w-[64px] h-auto sm:w-[96px] md:w-[128px] lg:w-[160px] xl:w-[200px] object-contain image-responsive"
+                            className="w-[80px] h-auto sm:w-[96px] md:w-[128px] lg:w-[160px] xl:w-[200px] object-contain image-responsive"
                             priority={false}
-                            sizes="(max-width: 640px) 64px, (max-width: 768px) 96px, (max-width: 1024px) 128px, (max-width: 1280px) 160px, 200px"
+                            sizes="(max-width: 640px) 80px, (max-width: 768px) 96px, (max-width: 1024px) 128px, (max-width: 1280px) 160px, 200px"
                             loading="lazy"
                             decoding="async"
                         />
@@ -192,7 +284,7 @@ function HeroGeometric({
                     <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-6 items-start">
                         {/* Right Section - Text Content */}
                         <div className="lg:col-span-6 xl:col-span-7 order-2 lg:order-2 lg:col-start-7">
-                            <div className="pl-20 sm:pl-24 md:pl-28 lg:pl-32 xl:pl-36 2xl:pl-40 lg:pr-6 ml-0 sm:ml-2 lg:ml-3 xl:ml-4 pt-4 sm:pt-8 lg:pt-12">
+                            <div className="pl-24 sm:pl-24 md:pl-28 lg:pl-32 xl:pl-36 2xl:pl-40 lg:pr-6 ml-0 sm:ml-2 lg:ml-3 xl:ml-4 pt-4 sm:pt-8 lg:pt-12">
                                 {/* Badge moved to navbar */}
 
                                 <motion.div
@@ -202,7 +294,7 @@ function HeroGeometric({
                                     transition={{ duration: 1, delay: 0.7 }}
                                     className="text-left"
                                 >
-                                    <h1 className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 tracking-tight leading-tight">
+                                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 tracking-tight leading-tight">
                                         <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                             {title1}
                                         </span>
