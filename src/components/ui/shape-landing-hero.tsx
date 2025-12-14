@@ -5,6 +5,7 @@ import { Circle } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { EtherealShadow } from "@/components/ui/etheral-shadow";
+import { BeamsBackground } from "@/components/ui/beams-background";
 function ElegantShape({
     className,
     delay = 0,
@@ -107,14 +108,10 @@ function HeroGeometric({
 
     return (
         <div className="relative w-full overflow-hidden bg-[#000814] pt-2 sm:pt-4 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
-            {/* Ethereal Shadow Background Layer */}
+            {/* Beams Background Layer */}
             <div className="absolute inset-0 z-0">
-                <EtherealShadow
-                    color="rgba(128, 128, 128, 1)"
-                    animation={{ scale: 100, speed: 90 }}
-                    noise={{ opacity: 1, scale: 1.2 }}
-                    sizing="fill"
-                    intensity={0.3}
+                <BeamsBackground
+                    intensity="strong"
                 />
             </div>
 
@@ -125,7 +122,7 @@ function HeroGeometric({
                 background: 'radial-gradient(circle at center, transparent 0%, transparent 60%, rgba(0, 0, 0, 0.3) 100%)'
             }} />
 
-            <div className="absolute inset-0 overflow-hidden">
+            <div className="absolute inset-0 overflow-hidden z-[5]">
                 <ElegantShape
                     delay={0.3}
                     width={300}
