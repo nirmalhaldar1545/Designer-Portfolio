@@ -295,3 +295,19 @@
     height: 100svh;
   }
 }
+
+/* Border glow animation for cards */
+@keyframes border-glow {
+  0%, 100% {
+    border-color: rgb(251 146 40 / 0.3); /* orange-400 with lower opacity */
+    box-shadow: 0 0 5px rgb(251 146 40 / 0.2);
+  }
+  50% {
+    border-color: rgb(251 146 40 / 0.6); /* orange-400 with higher opacity */
+    box-shadow: 0 0 20px rgb(251 146 40 / 0.4), 0 0 30px rgb(251 146 40 / 0.2);
+  }
+}
+
+.animate-border-glow {
+  animation: border-glow 3s ease-in-out infinite;
+}

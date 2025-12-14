@@ -1,11 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { Circle } from "lucide-react";
+import { Circle, Sparkles } from "lucide-react";
 import { cn } from "@/lib/utils";
 import Image from "next/image";
 import { EtherealShadow } from "@/components/ui/etheral-shadow";
 import { BeamsBackground } from "@/components/ui/beams-background";
+import DisplayCards from "./display-cards";
 function ElegantShape({
     className,
     delay = 0,
@@ -92,7 +93,7 @@ function ElegantShape({
 function HeroGeometric({
     badge = "Design Collective",
     title1 = "Elevate Your Digital Vision",
-    title2 = "Crafting Exceptional Websites",
+    title2 = "Crafting Exceptional Digital Experiences",
 }: {
     badge?: string;
     title1?: string;
@@ -100,11 +101,35 @@ function HeroGeometric({
 }) {
     const fadeUpVariants = {
         hidden: { opacity: 0, y: 30 },
-        visible: { 
+        visible: {
             opacity: 1,
             y: 0,
         },
     };
+
+    const cards = [
+        {
+            icon: <Sparkles className="size-4 text-blue-300" />,
+            title: "Software: Photoshop, Illustrator, CoralDraw",
+            titleClassName: "text-blue-500",
+            className: "[grid-area:stack] hover:-translate-y-20 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
+        },
+        {
+            icon: <Sparkles className="size-4 text-blue-300" />,
+            title: "Professional Graphic Designer, expertise in design of Logo, Thumbnail, Poster, Banner, Poster and many more.",
+            titleClassName: "text-blue-500",
+            className: "[grid-area:stack] translate-x-12 translate-y-4 hover:-translate-y-24 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
+        },
+        {
+            icon: <Sparkles className="size-4 text-blue-300" />,
+            title: "Profile",
+            description: "About me",
+            date: "Get to know",
+            titleClassName: "text-blue-500",
+            className: "[grid-area:stack] translate-x-24 translate-y-8 hover:-translate-y-16",
+            image: "/Assets/Images/Profile.jpg",
+        },
+    ];
 
     return (
         <div className="relative w-full overflow-hidden bg-[#000814] pt-2 sm:pt-4 lg:pt-20 min-h-screen mobile-text-optimized gpu-accelerated">
@@ -174,7 +199,7 @@ function HeroGeometric({
                 />
             </div>
 
-            {/* Mobile Layout: Locked 50% split with 35% photo and 65% text side by side */}
+            {/* Mobile Layout: Text and Cards side by side */}
             <div className="relative z-10 h-screen flex flex-col lg:hidden">
                 {/* First 50% - Split into 35% photo and 65% text side by side */}
                 <div className="h-[50vh] flex">
@@ -210,15 +235,11 @@ function HeroGeometric({
                         >
                             <h1 className="text-4xl font-bold tracking-tight leading-tight">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                    Elevate
+                                    {title1.split(' ')[0]}
                                 </span>
                                 <br />
                                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                    Your
-                                </span>
-                                <br />
-                                <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
-                                    Digital
+                                    {title1.split(' ').slice(1).join(' ')}
                                 </span>
                                 <br />
                                 <span
@@ -226,7 +247,7 @@ function HeroGeometric({
                                         "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
                                     )}
                                 >
-                                    Crafting
+                                    {title2.split(' ')[0]}
                                 </span>
                                 <br />
                                 <span
@@ -234,26 +255,27 @@ function HeroGeometric({
                                         "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
                                     )}
                                 >
-                                    Exceptional
-                                </span>
-                                <br />
-                                <span
-                                    className={cn(
-                                        "bg-clip-text text-transparent bg-gradient-to-r from-indigo-300 via-white/90 to-rose-300 "
-                                    )}
-                                >
-                                    Websites
+                                    {title2.split(' ').slice(1).join(' ')}
                                 </span>
                             </h1>
                         </motion.div>
                     </div>
                 </div>
 
-                {/* Remaining space for other content - no separation */}
-                <div className="flex-1"></div>
+                {/* Cards Section - Full width below, moved downward */}
+                <div className="h-[50vh] flex items-end justify-center pb-8">
+                    <motion.div
+                        initial={{ opacity: 0, scale: 0.9, x: 20, y: 10 }}
+                        animate={{ opacity: 1, scale: 1, x: 0, y: 10 }}
+                        transition={{ duration: 1, delay: 0.9 }}
+                        className="relative z-10 w-full flex justify-center px-4"
+                    >
+                        <DisplayCards cards={cards} />
+                    </motion.div>
+                </div>
             </div>
 
-            {/* Desktop Layout - Original layout for larger screens */}
+            {/* Desktop Layout - Text and Cards side by side */}
             <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 hidden lg:block">
                 {/* Image positioned at container level (same as navbar) */}
                 <div className="absolute left-4 sm:left-6 lg:left-8 top-0 sm:top-4 lg:top-8">
@@ -278,12 +300,10 @@ function HeroGeometric({
                 </div>
 
                 <div className="max-w-7xl mx-auto">
-                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-3 sm:gap-4 lg:gap-6 items-start">
-                        {/* Right Section - Text Content */}
-                        <div className="lg:col-span-6 xl:col-span-7 order-2 lg:order-2 lg:col-start-7">
+                    <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center min-h-[80vh]">
+                        {/* Left Section - Text Content */}
+                        <div className="lg:col-span-7 xl:col-span-7">
                             <div className="pl-24 sm:pl-24 md:pl-28 lg:pl-32 xl:pl-36 2xl:pl-40 lg:pr-6 ml-0 sm:ml-2 lg:ml-3 xl:ml-4 pt-4 sm:pt-8 lg:pt-12">
-                                {/* Badge moved to navbar */}
-
                                 <motion.div
                                     variants={fadeUpVariants}
                                     initial="hidden"
@@ -305,11 +325,20 @@ function HeroGeometric({
                                         </span>
                                         </h1>
                                 </motion.div>
-
-                                {/* Description text removed */}
                             </div>
                         </div>
 
+                        {/* Right Section - Cards */}
+                        <div className="lg:col-span-5 xl:col-span-5 flex justify-center">
+                            <motion.div
+                                initial={{ opacity: 0, scale: 0.9, x: 20, y: 20 }}
+                                animate={{ opacity: 1, scale: 1, x: 0, y: 20 }}
+                                transition={{ duration: 1, delay: 0.9 }}
+                                className="relative z-10 w-full flex justify-center"
+                            >
+                                <DisplayCards cards={cards} />
+                            </motion.div>
+                        </div>
                     </div>
                 </div>
             </div>
