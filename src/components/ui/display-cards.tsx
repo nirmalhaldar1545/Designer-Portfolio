@@ -3,6 +3,7 @@
 import { cn } from "@/lib/utils";
 import { Sparkles } from "lucide-react";
 import Image from "next/image";
+import { useState } from "react";
 
 interface DisplayCardProps {
   className?: string;
@@ -25,15 +26,29 @@ function DisplayCard({
   titleClassName = "text-orange-500",
   image,
 }: DisplayCardProps) {
+  const [isTouched, setIsTouched] = useState(false);
+
+  const handleTouchStart = () => {
+    setIsTouched(true);
+  };
+
+  const handleTouchEnd = () => {
+    // Small delay to show the effect
+    setTimeout(() => setIsTouched(false), 150);
+  };
+
   return (
     <div
       className={cn(
-        "relative flex h-[22rem] w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-4 py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-orange-400/60 hover:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow",
+        "relative flex h-[22rem] w-[22rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-4 py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation",
+        isTouched && "border-orange-400/60 bg-muted",
         className
       )}
       style={{
         borderColor: "rgb(251 146 40 / 0.4)", // orange-400 with opacity
       }}
+      onTouchStart={handleTouchStart}
+      onTouchEnd={handleTouchEnd}
     >
       <div>
         {image && (

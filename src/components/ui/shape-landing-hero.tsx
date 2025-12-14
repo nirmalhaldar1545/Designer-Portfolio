@@ -112,13 +112,13 @@ function HeroGeometric({
             icon: <Sparkles className="size-4 text-blue-300" />,
             title: "Software: Photoshop, Illustrator, CoralDraw",
             titleClassName: "text-blue-500",
-            className: "[grid-area:stack] hover:-translate-y-20 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
+            className: "[grid-area:stack] hover:-translate-y-20 active:-translate-y-20 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 active:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 active:grayscale-0 before:left-0 before:top-0",
         },
         {
             icon: <Sparkles className="size-4 text-blue-300" />,
             title: "Professional Graphic Designer, expertise in design of Logo, Thumbnail, Poster, Banner, Poster and many more.",
             titleClassName: "text-blue-500",
-            className: "[grid-area:stack] translate-x-12 translate-y-4 hover:-translate-y-24 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 before:left-0 before:top-0",
+            className: "[grid-area:stack] translate-x-12 translate-y-4 hover:-translate-y-24 active:-translate-y-24 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-border before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 active:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 active:grayscale-0 before:left-0 before:top-0",
         },
         {
             icon: <Sparkles className="size-4 text-blue-300" />,
@@ -126,7 +126,7 @@ function HeroGeometric({
             description: "About me",
             date: "Get to know",
             titleClassName: "text-blue-500",
-            className: "[grid-area:stack] translate-x-24 translate-y-8 hover:-translate-y-16",
+            className: "[grid-area:stack] translate-x-24 translate-y-8 hover:-translate-y-16 active:-translate-y-16",
             image: "/Assets/Images/Profile.jpg",
         },
     ];
