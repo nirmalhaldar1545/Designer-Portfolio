@@ -91,74 +91,74 @@ function HeroGeometric({
             <div className="absolute inset-0 overflow-hidden z-10">
                 <ElegantShape
                     delay={0.3}
-                    width={700}
-                    height={160}
+                    width={300}
+                    height={80}
                     rotate={12}
                     gradient="from-indigo-400/[0.25]"
-                    className="left-[-10%] md:left-[-5%] top-[15%] md:top-[20%]"
+                    className="left-[-20%] top-[15%] md:left-[-5%] md:top-[20%] md:w-[700px] md:h-[160px]"
                 />
 
                 <ElegantShape
                     delay={0.5}
-                    width={600}
-                    height={140}
+                    width={250}
+                    height={70}
                     rotate={-15}
                     gradient="from-rose-400/[0.25]"
-                    className="right-[-5%] md:right-[0%] top-[70%] md:top-[75%]"
+                    className="right-[-10%] top-[70%] md:right-[0%] md:top-[75%] md:w-[600px] md:h-[140px]"
                 />
 
                 <ElegantShape
                     delay={0.4}
-                    width={400}
-                    height={100}
+                    width={200}
+                    height={60}
                     rotate={-8}
                     gradient="from-violet-400/[0.25]"
-                    className="left-[5%] md:left-[10%] bottom-[5%] md:bottom-[10%]"
+                    className="left-[-10%] bottom-[5%] md:left-[10%] md:bottom-[10%] md:w-[400px] md:h-[100px]"
                 />
 
                 <ElegantShape
                     delay={0.6}
-                    width={300}
-                    height={80}
+                    width={180}
+                    height={50}
                     rotate={20}
                     gradient="from-amber-400/[0.25]"
-                    className="right-[15%] md:right-[20%] top-[10%] md:top-[15%]"
+                    className="right-[-5%] top-[10%] md:right-[20%] md:top-[15%] md:w-[300px] md:h-[80px]"
                 />
 
                 <ElegantShape
                     delay={0.7}
-                    width={250}
-                    height={60}
+                    width={150}
+                    height={40}
                     rotate={-25}
                     gradient="from-cyan-400/[0.25]"
-                    className="left-[20%] md:left-[25%] top-[5%] md:top-[10%]"
+                    className="left-[10%] top-[5%] md:left-[25%] md:top-[10%] md:w-[250px] md:h-[60px]"
                 />
 
                 <ElegantShape
                     delay={0.8}
-                    width={200}
-                    height={50}
+                    width={120}
+                    height={35}
                     rotate={35}
                     gradient="from-emerald-400/[0.25]"
-                    className="right-[25%] md:right-[30%] bottom-[15%] md:bottom-[20%]"
+                    className="right-[5%] bottom-[15%] md:right-[30%] md:bottom-[20%] md:w-[200px] md:h-[50px]"
                 />
             </div>
 
             {/* Portfolio text and demo positioned higher up with less top padding */}
             <div className="relative z-20 flex flex-col items-center justify-start min-h-screen pt-8 px-4 pb-32">
-                <div className="flex flex-col items-center gap-8 text-center mb-12">
-                    <AnimatedLetterText 
-                        text="PORTFOLIO" 
-                        letterToReplace="o" 
-                        className="text-7xl md:text-9xl text-white drop-shadow-lg" 
+                <div className="flex flex-col items-center gap-6 md:gap-8 text-center mb-8 md:mb-12">
+                    <AnimatedLetterText
+                        text="PORTFOLIO"
+                        letterToReplace="o"
+                        className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-9xl text-white drop-shadow-lg leading-tight"
                     />
 
-                    <p className="text-white/90 text-lg max-w-none whitespace-nowrap drop-shadow-md">
+                    <p className="text-white/90 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed drop-shadow-md">
                         Crafting visually stunning designs that bring your brand story to life
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex gap-4 mt-6">
+                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6">
                         <GradientButton>
                             View My Work
                         </GradientButton>
@@ -169,7 +169,7 @@ function HeroGeometric({
                 </div>
 
                 {/* Glowing Effect Demo */}
-                <div className="w-full max-w-6xl">
+                <div className="w-full max-w-6xl px-2">
                     <GlowingEffectDemo />
                 </div>
             </div>
