@@ -263,7 +263,7 @@ function HeroGeometric({
                 </div>
 
                 {/* Cards Section - Full width below, moved downward */}
-                <div className="h-[50vh] flex items-end justify-center pb-8">
+                <div className="h-[30vh] flex items-start justify-center -mt-8">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, x: 20, y: 10 }}
                         animate={{ opacity: 1, scale: 1, x: 0, y: 10 }}
