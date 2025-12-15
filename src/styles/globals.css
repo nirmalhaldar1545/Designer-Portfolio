@@ -7,6 +7,21 @@
   --font-handwritten: "Caveat", "Comic Sans MS", cursive, sans-serif;
 }
 
+:root {
+  --foreground: oklch(0.15 0 0);
+  --muted-foreground: oklch(0.65 0 0);
+  --card: oklch(0.145 0 0);
+  --popover: oklch(0.145 0 0);
+  --primary: oklch(0.985 0 0);
+  --destructive: oklch(0.396 0.141 25.723);
+  --destructive-foreground: oklch(0.637 0.237 25.331);
+  --border: oklch(0.269 0 0);
+  --input: oklch(0.269 0 0);
+  --ring: oklch(0.439 0 0);
+  --sidebar-border: oklch(0.269 0 0);
+  --sidebar-ring: oklch(0.439 0 0);
+}
+
 /* Mobile-first responsive design improvements */
 @layer utilities {
   /* Better touch targets on mobile */
@@ -310,4 +325,17 @@
 
 .animate-border-glow {
   animation: border-glow 3s ease-in-out infinite;
+}
+
+@keyframes diamond-rotate {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-diamond-rotate {
+  animation: diamond-rotate 3s linear infinite;
 }
