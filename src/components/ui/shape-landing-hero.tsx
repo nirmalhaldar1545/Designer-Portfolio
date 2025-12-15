@@ -142,7 +142,8 @@ function HeroGeometric({
                 />
             </div>
 
-            <div className="relative z-20 flex items-center justify-center min-h-screen">
+            {/* Portfolio text positioned higher up */}
+            <div className="relative z-20 flex items-start justify-center min-h-screen pt-32">
                 <div className="flex flex-col items-center gap-8 text-center">
                     <AnimatedLetterText 
                         text="PORTFOLIO" 
