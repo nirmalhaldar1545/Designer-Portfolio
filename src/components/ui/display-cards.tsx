@@ -70,7 +70,7 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-96 xl:w-96 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-2 sm:px-3 md:px-4 py-2 sm:py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] after:pointer-events-none hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation display-card z-[10]",
+        "relative flex h-80 w-80 sm:h-96 sm:w-96 md:h-[24rem] md:w-[26rem] lg:h-[28rem] lg:w-[32rem] xl:h-[30rem] xl:w-[36rem] -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-2 sm:px-3 md:px-4 py-2 sm:py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] after:pointer-events-none hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation display-card z-[10]",
         isPopupOpen && "border-orange-400/60 bg-muted",
         className
       )}
