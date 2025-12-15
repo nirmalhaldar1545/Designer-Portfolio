@@ -70,7 +70,7 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-88 xl:w-88 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-2 sm:px-3 md:px-4 py-2 sm:py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation display-card",
+        "relative flex h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-2 sm:px-3 md:px-4 py-2 sm:py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] after:pointer-events-none hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation display-card z-[10]",
         isPopupOpen && "border-orange-400/60 bg-muted",
         className
       )}
@@ -109,20 +109,20 @@ interface DisplayCardsProps {
 export default function DisplayCards({ cards }: DisplayCardsProps) {
   const defaultCards = [
     {
-      className: "[grid-area:stack] hover:-translate-y-10 active:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-orange-400/20 before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 active:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 active:grayscale-0 before:left-0 before:top-0",
+      className: "[grid-area:stack] z-30 hover:-translate-y-10 active:-translate-y-10 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-orange-400/20 before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 active:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 active:grayscale-0 before:left-0 before:top-0",
     },
     {
-      className: "[grid-area:stack] translate-x-16 translate-y-10 hover:-translate-y-1 active:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-orange-400/20 before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 active:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 active:grayscale-0 before:left-0 before:top-0",
+      className: "[grid-area:stack] z-20 translate-x-6 translate-y-4 sm:translate-x-12 sm:translate-y-8 md:translate-x-16 md:translate-y-10 hover:-translate-y-1 sm:hover:-translate-y-2 md:hover:-translate-y-1 active:-translate-y-1 before:absolute before:w-[100%] before:outline-1 before:rounded-xl before:outline-orange-400/20 before:h-[100%] before:content-[''] before:bg-blend-overlay before:bg-background/50 grayscale-[100%] hover:before:opacity-0 active:before:opacity-0 before:transition-opacity before:duration:700 hover:grayscale-0 active:grayscale-0 before:left-0 before:top-0",
     },
     {
-      className: "[grid-area:stack] translate-x-32 translate-y-20 hover:translate-y-10 active:translate-y-10",
+      className: "[grid-area:stack] z-10 translate-x-12 translate-y-8 sm:translate-x-24 sm:translate-y-16 md:translate-x-32 md:translate-y-20 hover:translate-y-4 sm:hover:translate-y-8 md:hover:translate-y-10 active:translate-y-4",
     },
   ];
 
   const displayCards = cards ?? defaultCards;
 
   return (
-    <div className="grid gap-2 sm:gap-4 md:gap-6 \[grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700">
+    <div className="grid gap-4 sm:gap-8 md:gap-10 lg:gap-12 [grid-template-areas:'stack'] place-items-center opacity-100 animate-in fade-in-0 duration-700">
       {displayCards.map((cardProps, index) => (
         <DisplayCard key={index} {...cardProps} />
       ))}
