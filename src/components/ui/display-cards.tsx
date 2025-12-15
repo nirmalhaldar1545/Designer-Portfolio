@@ -19,7 +19,7 @@ interface DisplayCardProps {
 
 function DisplayCard({
   className,
-  icon = <Sparkles className="size-3 sm:size-4 md:size-5 text-orange-300" />,
+  icon = <Sparkles className="size-4 sm:size-5 md:size-6 text-orange-300" />,
   title = "Featured",
   description,
   date,
@@ -70,7 +70,7 @@ function DisplayCard({
   return (
     <div
       className={cn(
-        "relative flex h-48 w-48 sm:h-56 sm:w-56 md:h-64 md:w-64 lg:h-72 lg:w-72 xl:h-80 xl:w-80 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-2 sm:px-3 md:px-4 py-2 sm:py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation display-card",
+        "relative flex h-56 w-56 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80 xl:h-88 xl:w-88 -skew-y-[8deg] select-none flex-col justify-between rounded-xl border-2 bg-muted/70 backdrop-blur-sm px-2 sm:px-3 md:px-4 py-2 sm:py-3 transition-all duration-700 after:absolute after:-right-1 after:top-[-5%] after:h-[110%] after:w-[20rem] after:bg-gradient-to-l after:from-background after:to-transparent after:content-[''] hover:border-orange-400/60 hover:bg-muted active:border-orange-400/60 active:bg-muted [&>*]:flex [&>*]:items-center [&>*]:gap-2 animate-border-glow touch-manipulation display-card",
         isPopupOpen && "border-orange-400/60 bg-muted",
         className
       )}
@@ -94,7 +94,7 @@ function DisplayCard({
             <span className="relative inline-block rounded-full bg-orange-800 p-1">
               {icon}
             </span>
-            <p className={cn("text-sm sm:text-base md:text-lg font-medium", titleClassName)}>{title}</p>
+            <p className={cn("text-base sm:text-lg md:text-xl font-medium", titleClassName)}>{title}</p>
           </>
         )}
       </div>

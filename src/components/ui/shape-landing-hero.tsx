@@ -216,7 +216,7 @@ function HeroGeometric({
                                 alt="Designer figure"
                                 width={100}
                                 height={133}
-                                className="w-[60px] h-auto sm:w-[80px] md:w-[90px] object-contain image-responsive"
+                                className="w-[80px] h-auto sm:w-[100px] md:w-[120px] object-contain image-responsive"
                                 priority={false}
                                 loading="lazy"
                                 decoding="async"
@@ -233,7 +233,7 @@ function HeroGeometric({
                             transition={{ duration: 1, delay: 0.7 }}
                             className="text-left w-full"
                         >
-                            <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
+                            <h1 className="text-3xl xs:text-4xl sm:text-5xl font-bold tracking-tight leading-tight">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                     {title1.split(' ')[0]}
                                 </span>
