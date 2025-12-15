@@ -200,11 +200,11 @@ function HeroGeometric({
             </div>
 
             {/* Mobile Layout: Text and Cards side by side */}
-            <div className="relative z-10 h-screen flex flex-col lg:hidden">
+            <div className="relative z-10 flex flex-col md:hidden min-h-screen">
                 {/* First 50% - Split into 35% photo and 65% text side by side */}
-                <div className="h-[50vh] flex">
+                <div className="h-[60vh] flex">
                     {/* Photo Section - 35% width */}
-                    <div className="w-[35%] h-full flex items-center justify-center px-2">
+                    <div className="w-[30%] h-full flex items-center justify-center px-1 sm:px-2">
                         <motion.div
                             initial={{ opacity: 0, scale: 0.9, x: -20 }}
                             animate={{ opacity: 1, scale: 1, x: 0 }}
@@ -216,7 +216,7 @@ function HeroGeometric({
                                 alt="Designer figure"
                                 width={100}
                                 height={133}
-                                className="w-[80px] h-auto object-contain image-responsive"
+                                className="w-[60px] h-auto sm:w-[80px] md:w-[90px] object-contain image-responsive"
                                 priority={false}
                                 loading="lazy"
                                 decoding="async"
@@ -225,7 +225,7 @@ function HeroGeometric({
                     </div>
                     
                     {/* Text Section - 65% width */}
-                    <div className="w-[65%] h-full flex items-center justify-center px-3">
+                    <div className="w-[70%] h-full flex items-center justify-center px-2 sm:px-3">
                         <motion.div
                             variants={fadeUpVariants}
                             initial="hidden"
@@ -233,7 +233,7 @@ function HeroGeometric({
                             transition={{ duration: 1, delay: 0.7 }}
                             className="text-left w-full"
                         >
-                            <h1 className="text-4xl font-bold tracking-tight leading-tight">
+                            <h1 className="text-2xl xs:text-3xl sm:text-4xl font-bold tracking-tight leading-tight">
                                 <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                     {title1.split(' ')[0]}
                                 </span>
@@ -263,7 +263,7 @@ function HeroGeometric({
                 </div>
 
                 {/* Cards Section - Full width below, moved downward */}
-                <div className="h-[30vh] flex items-start justify-center -mt-8">
+                <div className="h-[40vh] flex items-start justify-center -mt-4 sm:-mt-6 md:-mt-8 px-2 sm:px-4">
                     <motion.div
                         initial={{ opacity: 0, scale: 0.9, x: 20, y: 10 }}
                         animate={{ opacity: 1, scale: 1, x: 0, y: 10 }}
@@ -276,7 +276,7 @@ function HeroGeometric({
             </div>
 
             {/* Desktop Layout - Text and Cards side by side */}
-            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-6 sm:py-8 lg:py-12 hidden lg:block">
+            <div className="relative z-10 container mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6 md:py-8 lg:py-12 hidden md:block">
                 {/* Image positioned at container level (same as navbar) */}
                 <div className="absolute left-4 sm:left-6 lg:left-8 top-0 sm:top-4 lg:top-8">
                     <motion.div
@@ -311,7 +311,7 @@ function HeroGeometric({
                                     transition={{ duration: 1, delay: 0.7 }}
                                     className="text-left"
                                 >
-                                    <h1 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 tracking-tight leading-tight">
+                                    <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-8xl font-bold mb-4 sm:mb-6 lg:mb-8 tracking-tight leading-tight">
                                         <span className="bg-clip-text text-transparent bg-gradient-to-b from-white to-white/80">
                                             {title1}
                                         </span>
