@@ -1,13 +1,9 @@
-import { HeroGeometric } from "@/components/ui/shape-landing-hero";
+import ShaderDemo_ATC from "@/components/ui/atc-shader"
 
-export default function Home() {
+export default function HomePage() {``
   return (
-    <main className="min-h-screen w-full smooth-scroll mobile-text-optimized">
-      {/* Hero Section with geometric shapes, animations, and card components */}
-      <HeroGeometric
-        title1 = "Crafting Exceptional"
-        title2 = "Digital Experiences"
-      />
+    <main className="min-h-screen">
+      <ShaderDemo_ATC />
     </main>
-  );
+  )
 }
