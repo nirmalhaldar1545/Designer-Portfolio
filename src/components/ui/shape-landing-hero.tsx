@@ -3,6 +3,7 @@
 import { motion } from "framer-motion";
 import { AnimatedLetterText } from "@/components/ui/potfolio-text";
 import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo";
+import { GradientButton } from "@/components/ui/gradient-button";
 import { cn } from "@/lib/utils";
 
 
@@ -143,8 +144,8 @@ function HeroGeometric({
                 />
             </div>
 
-            {/* Portfolio text and demo positioned higher up with bottom padding */}
-            <div className="relative z-20 flex flex-col items-center justify-start min-h-screen pt-16 px-4 pb-32">
+            {/* Portfolio text and demo positioned higher up with less top padding */}
+            <div className="relative z-20 flex flex-col items-center justify-start min-h-screen pt-8 px-4 pb-32">
                 <div className="flex flex-col items-center gap-8 text-center mb-12">
                     <AnimatedLetterText 
                         text="PORTFOLIO" 
@@ -152,9 +153,19 @@ function HeroGeometric({
                         className="text-7xl md:text-9xl text-white drop-shadow-lg" 
                     />
 
-                    <p className="text-white/90 text-lg max-w-md drop-shadow-md">
+                    <p className="text-white/90 text-lg max-w-none whitespace-nowrap drop-shadow-md">
                         Crafting visually stunning designs that bring your brand story to life
                     </p>
+
+                    {/* CTA Buttons */}
+                    <div className="flex gap-4 mt-6">
+                        <GradientButton>
+                            View My Work
+                        </GradientButton>
+                        <GradientButton variant="variant">
+                            Get In Touch
+                        </GradientButton>
+                    </div>
                 </div>
 
                 {/* Glowing Effect Demo */}

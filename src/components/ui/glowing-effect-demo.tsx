@@ -55,9 +55,9 @@ const GridItem = ({ area, icon, title, description }: GridItemProps) => {
           spread={50}
           glow={true}
           disabled={false}
-          proximity={80}
-          inactiveZone={0.01}
-          borderWidth={2}
+          proximity={0}
+          inactiveZone={0}
+          borderWidth={4}
         />
         <div className="relative flex h-full flex-col justify-between gap-6 overflow-hidden rounded-2xl border border-white/10 bg-white/[0.02] backdrop-blur-xl shadow-2xl shadow-black/20 p-8 md:p-10">
           {/* Flowing white border effect */}
