@@ -21,7 +21,6 @@ interface NavBarProps {
 export function NavBar({ items, className }: NavBarProps) {
   const pathname = usePathname()
   const [activeTab, setActiveTab] = useState(items[0]?.name ?? "")
-  const [isMobile, setIsMobile] = useState(false)
 
   useEffect(() => {
     // Set active tab based on current pathname
@@ -31,20 +30,10 @@ export function NavBar({ items, className }: NavBarProps) {
     }
   }, [pathname, items])
 
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768)
-    }
-
-    handleResize()
-    window.addEventListener("resize", handleResize)
-    return () => window.removeEventListener("resize", handleResize)
-  }, [])
-
   return (
     <div
       className={cn(
-        "fixed bottom-0 sm:top-0 left-1/2 -translate-x-1/2 z-50 mb-6 sm:pt-6",
+        "fixed bottom-0 left-1/2 -translate-x-1/2 z-50 mb-6",
         className,
       )}
     >
@@ -64,8 +53,8 @@ export function NavBar({ items, className }: NavBarProps) {
                 isActive && "bg-white/20 text-white",
               )}
             >
-              <span className="hidden md:inline">{item.name}</span>
-              <span className="md:hidden">
+              <span className="hidden sm:inline">{item.name}</span>
+              <span className="sm:hidden">
                 <Icon size={18} strokeWidth={2.5} />
               </span>
               {isActive && (
