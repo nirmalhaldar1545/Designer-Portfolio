@@ -154,11 +154,11 @@ function HeroGeometric({
                     />
 
                     <p className="text-white/90 text-base sm:text-lg md:text-xl max-w-2xl mx-auto leading-relaxed drop-shadow-md">
-                        Crafting visually stunning designs that bring your brand story to life
+                        Turning ideas into creating clear, impactful visuals designs that connect brands with their audience.
                     </p>
 
                     {/* CTA Buttons */}
-                    <div className="flex flex-col sm:flex-row gap-3 sm:gap-4 mt-4 sm:mt-6">
+                    <div className="flex gap-2 sm:gap-4 mt-4 sm:mt-6">
                         <GradientButton>
                             View My Work
                         </GradientButton>
