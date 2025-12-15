@@ -2,6 +2,7 @@
 
 import { motion } from "framer-motion";
 import { AnimatedLetterText } from "@/components/ui/potfolio-text";
+import { GlowingEffectDemo } from "@/components/ui/glowing-effect-demo";
 import { cn } from "@/lib/utils";
 
 
@@ -142,9 +143,9 @@ function HeroGeometric({
                 />
             </div>
 
-            {/* Portfolio text positioned higher up */}
-            <div className="relative z-20 flex items-start justify-center min-h-screen pt-32">
-                <div className="flex flex-col items-center gap-8 text-center">
+            {/* Portfolio text and demo positioned higher up with bottom padding */}
+            <div className="relative z-20 flex flex-col items-center justify-start min-h-screen pt-16 px-4 pb-32">
+                <div className="flex flex-col items-center gap-8 text-center mb-12">
                     <AnimatedLetterText 
                         text="PORTFOLIO" 
                         letterToReplace="o" 
@@ -152,8 +153,13 @@ function HeroGeometric({
                     />
 
                     <p className="text-white/90 text-lg max-w-md drop-shadow-md">
-                        An elegant text component where letters transform into animated visuals
+                        Crafting visually stunning designs that bring your brand story to life
                     </p>
+                </div>
+
+                {/* Glowing Effect Demo */}
+                <div className="w-full max-w-6xl">
+                    <GlowingEffectDemo />
                 </div>
             </div>
 
